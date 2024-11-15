@@ -28,6 +28,9 @@ public class User {
     @Column(name = "created_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime createdAt;
 
+    @Column(nullable = false, columnDefinition = "varchar(255) default 'ROLE_USER'")
+    private String role;
+
     @PrePersist
     public void prePersist() {
         // Устанавливаем текущую дату и время перед сохранением объекта
